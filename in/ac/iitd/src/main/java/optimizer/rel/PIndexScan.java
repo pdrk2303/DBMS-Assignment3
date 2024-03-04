@@ -49,7 +49,7 @@ public class PIndexScan extends TableScan implements PRel {
         }
 
         @Override
-        public List<Object[]> evaluate(StorageManager db_manager) {
+        public List<Object[]> evaluate(StorageManager storage_manager) {
             String tableName = getTableName();
             System.out.println("Evaluating PIndexScan for table: " + tableName);
 

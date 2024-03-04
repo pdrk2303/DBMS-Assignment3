@@ -330,7 +330,6 @@ public class StorageManager {
             }
         }
 
-        // TODO: remove repeated code
         // write variable length fields
         for(int i = 0; i < columnNames.size(); i++) {
             if(typeList.get(i).getSqlTypeName().getName().equals("VARCHAR")) {
@@ -400,6 +399,11 @@ public class StorageManager {
         /* Write your code here */
         // Hint: You need to delete from both - the file and the index
         return false;
+    }
+
+    // will be used for evaluation - DO NOT modify
+    public DB getDb() {
+        return db;
     }
 
 }

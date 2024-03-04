@@ -7,5 +7,5 @@ import java.util.List;
 import org.apache.calcite.rel.RelNode;
 
 public interface PRel extends RelNode {   
-    public List <Object []> evaluate(StorageManager db_manager);
+    public List <Object []> evaluate(StorageManager storage_manager);
 }

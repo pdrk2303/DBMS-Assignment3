@@ -65,11 +65,11 @@ public class MyCalciteConnection {
     private SqlValidator validator;
     private SqlToRelConverter converter;
     private VolcanoPlanner planner;
-    private StorageManager db_manager;
+    private StorageManager storage_manager;
     
     public MyCalciteConnection() throws Exception {
 
-        db_manager = new StorageManager();
+        storage_manager = new StorageManager();
         Properties info = new Properties();
         info.put("model", jsonPath("model"));
         info.put(CalciteConnectionProperty.CASE_SENSITIVE.camelName(), Boolean.FALSE.toString());
@@ -121,7 +121,7 @@ public class MyCalciteConnection {
         // load the tables
         for (String table : tableSchema.keySet()) {
             List<RelDataType> fields = tableSchema.get(table);
-            db_manager.loadFile(table + ".csv", fields);
+            storage_manager.loadFile(table + ".csv", fields);
         }
         System.out.println("Done loading files");
 
@@ -190,17 +190,17 @@ public class MyCalciteConnection {
     }
 
     public void create_index(String table, String column_name, int order){
-        db_manager.create_index(table, column_name, order);
+        storage_manager.create_index(table, column_name, order);
         return;
     }
 
     public List<Object []> evaluate(RelNode node) {
-        return ((PRel) node).evaluate(db_manager);
+        return ((PRel) node).evaluate(storage_manager);
     }
 
     // will be used in tests
     public List<Object []> get_records_from_block(String table, int block_id) {
-        return db_manager.get_records_from_block(table, block_id);
+        return storage_manager.get_records_from_block(table, block_id);
     }
 
 }

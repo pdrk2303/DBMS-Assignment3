@@ -11,7 +11,8 @@ import java.util.List;
  */
 public class DB {
     
-    public List<AbstractFile<? extends AbstractBlock>> files;
+    // This is private :)
+    private List<AbstractFile<? extends AbstractBlock>> files;
 
     public DB() {
         files = new ArrayList<>();
