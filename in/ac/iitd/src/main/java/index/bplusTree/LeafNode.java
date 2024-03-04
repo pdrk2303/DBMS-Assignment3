@@ -4,6 +4,8 @@ package index.bplusTree;
     * A LeafNode contains keys and block ids.
     * Looks Like -
     * # entries | prev leafnode | next leafnode | ptr to next free offset | blockid_1 | len(key_1) | key_1 ...
+    *
+    * Note: Only write code where specified!
  */
 public class LeafNode<T> extends BlockNode implements TreeNode<T>{
 
