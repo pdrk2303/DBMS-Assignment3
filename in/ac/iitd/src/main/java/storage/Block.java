@@ -1,6 +1,4 @@
-package Storage.LLD;
-
-import Storage.Abstract.AbstractBlock;
+package storage;
 
 // Similar to blocks of data on disk
 public class Block extends AbstractBlock{

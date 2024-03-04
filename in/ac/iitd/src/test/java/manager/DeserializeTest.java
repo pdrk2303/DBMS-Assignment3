@@ -1,5 +1,3 @@
-import DB_Manager.Manager;
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 

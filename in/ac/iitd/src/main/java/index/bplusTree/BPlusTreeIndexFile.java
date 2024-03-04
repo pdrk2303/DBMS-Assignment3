@@ -1,6 +1,6 @@
-package Index.BPlusTree;
+package index.bplusTree;
 
-import Storage.Abstract.AbstractFile;
+import storage.AbstractFile;
 
 import java.util.Queue;
 import java.util.LinkedList;
@@ -10,12 +10,12 @@ import java.util.LinkedList;
     * The first BlockNode is the metadata block - stores the order and the block_id of the root node
 */
 
-public class Tree<T> extends AbstractFile<BlockNode> {
+public class BPlusTreeIndexFile<T> extends AbstractFile<BlockNode> {
 
     Class<T> typeClass;
 
     // Constructor - creates the metadata block and the root node
-    public Tree(int order, Class<T> typeClass) {
+    public BPlusTreeIndexFile(int order, Class<T> typeClass) {
         
         super();
         this.typeClass = typeClass;

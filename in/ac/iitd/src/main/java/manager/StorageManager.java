@@ -1,9 +1,8 @@
-package DB_Manager;
+package manager;
 
-import Index.BPlusTree.Tree;
-import Storage.LLD.DB;
-import Storage.LLD.File;
-import Storage.LLD.Block;
+import storage.DB;
+import storage.File;
+import storage.Block;
 import Utils.CsvRowConverter;
 
 import java.io.BufferedReader;
@@ -24,7 +23,7 @@ import org.json.simple.parser.ParseException;
 
 import java.util.Iterator;
 
-public class Manager {
+public class StorageManager {
 
     private HashMap<String, Integer> file_to_fileid;
     private DB db;
@@ -33,7 +32,7 @@ public class Manager {
         VARCHAR, INTEGER, BOOLEAN, FLOAT, DOUBLE
     };
 
-    public Manager() {
+    public StorageManager() {
         file_to_fileid = new HashMap<>();
         db = new DB();
     }

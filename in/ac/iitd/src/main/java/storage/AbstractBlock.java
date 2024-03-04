@@ -1,4 +1,4 @@
-package Storage.Abstract;
+package storage;
 
 // Abstract Block class - 4kB fixed size blocks
 // will be extended by LLD block and TreeNode

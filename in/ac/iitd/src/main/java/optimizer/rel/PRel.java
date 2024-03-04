@@ -1,11 +1,11 @@
 package optimizer.rel;
 
-import DB_Manager.Manager;
+import manager.StorageManager;
 
 import java.util.List;
 
 import org.apache.calcite.rel.RelNode;
 
 public interface PRel extends RelNode {   
-    public List <Object []> evaluate(Manager db_manager);
+    public List <Object []> evaluate(StorageManager db_manager);
 }

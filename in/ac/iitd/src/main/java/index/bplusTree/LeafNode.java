@@ -1,4 +1,4 @@
-package Index.BPlusTree;
+package index.bplusTree;
 
 /*
     * A LeafNode contains keys and block ids.

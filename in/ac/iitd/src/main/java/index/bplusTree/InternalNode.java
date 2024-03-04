@@ -1,4 +1,4 @@
-package Index.BPlusTree;
+package index.bplusTree;
 
 /*
     * Internal Node - num Keys | ptr to next free offset | P_1 | len(K_1) | K_1 | P_2 | len(K_2) | K_2 | ... | P_n
@@ -52,6 +52,13 @@ public class InternalNode<T> extends BlockNode implements TreeNode<T> {
 
         /* Write your code here */
 
+    }
+
+    @Override
+    public int search(T key) {
+
+        /* Write your code here */
+        return -1;
     }
 
     public int[] getChildren() {

@@ -1,6 +1,4 @@
-package Storage.LLD;
-
-import Storage.Abstract.AbstractFile;
+package storage;
 
 /*
     * A File is simply a collection of blocks

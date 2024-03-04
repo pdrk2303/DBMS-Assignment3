@@ -1,8 +1,6 @@
-package Storage.LLD;
+package storage;
 
-import Storage.Abstract.AbstractBlock;
-import Storage.Abstract.AbstractFile;
-import Index.BPlusTree.Tree;
+import index.bplusTree.BPlusTreeIndexFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,8 +57,8 @@ public class DB {
             return -1;
         }
         AbstractFile<? extends AbstractBlock> file = files.get(file_id);
-        if(file instanceof Tree){
-            return ((Tree<T>) file).search(key);
+        if(file instanceof BPlusTreeIndexFile){
+            return ((BPlusTreeIndexFile<T>) file).search(key);
         }
         return -1;
     }

@@ -1,4 +1,4 @@
-package Index.BPlusTree;
+package index.bplusTree;
 
 // DO NOT change this file.
 
@@ -7,6 +7,8 @@ public interface TreeNode <T> {
 
     public T[] getKeys();
     public void insert(T key, int block_id);
+    public int search(T key);
+
 
     default public void print() {
         T[] keys = getKeys();

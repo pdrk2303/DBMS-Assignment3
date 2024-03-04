@@ -1,6 +1,6 @@
-package Index.BPlusTree;
+package index.bplusTree;
 
-import Storage.Abstract.AbstractBlock;
+import storage.AbstractBlock;
 
 // Extends AbstractBlock, will be extended by InternalNode and LeafNode
 public class BlockNode extends AbstractBlock {

@@ -33,13 +33,12 @@ import org.apache.calcite.tools.Program;
 import org.apache.calcite.tools.Programs;
 import org.apache.calcite.tools.RuleSet;
 import org.apache.calcite.tools.RuleSets;
-import org.apache.calcite.rel.type.RelDataTypeField;
 import org.apache.calcite.rel.type.RelDataTypeFieldImpl;
 import org.apache.calcite.rel.type.RelDataType;
 import org.apache.calcite.sql.type.SqlTypeName;
 
 import optimizer.rel.PRel;
-import DB_Manager.Manager;
+import manager.StorageManager;
 
 import java.util.Properties;
 import java.util.Collections;
@@ -50,8 +49,6 @@ import java.sql.ResultSet;
 import java.sql.DatabaseMetaData;
 import java.util.List;
 import java.util.ArrayList;
-import java.io.InputStream;
-import java.io.File;
 
 public class MyCalciteConnection {
 
@@ -68,11 +65,11 @@ public class MyCalciteConnection {
     private SqlValidator validator;
     private SqlToRelConverter converter;
     private VolcanoPlanner planner;
-    private Manager db_manager;
+    private StorageManager db_manager;
     
     public MyCalciteConnection() throws Exception {
 
-        db_manager = new Manager();
+        db_manager = new StorageManager();
         Properties info = new Properties();
         info.put("model", jsonPath("model"));
         info.put(CalciteConnectionProperty.CASE_SENSITIVE.camelName(), Boolean.FALSE.toString());
