@@ -33,4 +33,11 @@ public abstract class AbstractFile <T extends AbstractBlock> {
         }
         return blocks.get(block_id).get_data(offset, length);
     }
+
+    public void write_data(int block_id, int offset, byte[] data){
+        if(block_id >= blocks.size()){
+            return;
+        }
+        blocks.get(block_id).write_data(offset, data);
+    }
 }

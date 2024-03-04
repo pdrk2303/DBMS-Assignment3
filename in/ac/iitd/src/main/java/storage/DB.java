@@ -63,4 +63,24 @@ public class DB {
         }
         return -1;
     }
+
+    public void write_data(int file_id, int block_id, int offset, byte[] data){
+        if(file_id >= files.size()){
+            return;
+        }
+        files.get(file_id).write_data(block_id, offset, data);
+        return;
+    }
+
+    public <T> boolean delete_from_index(int file_id, T key){
+        if(file_id >= files.size()){
+            return false;
+        }
+        AbstractFile<? extends AbstractBlock> file = files.get(file_id);
+        if(file instanceof BPlusTreeIndexFile){
+            return ((BPlusTreeIndexFile<T>) file).delete(key);
+        }
+        return false;
+    }
+
 }
