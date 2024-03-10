@@ -3,6 +3,10 @@ package index.bplusTree;
 import storage.AbstractFile;
 
 import java.util.Queue;
+
+import org.checkerframework.checker.units.qual.A;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /*
@@ -105,6 +109,34 @@ public class BPlusTreeIndexFile<T> extends AbstractFile<BlockNode> {
             }
         }
         return;
+    }
+
+    // DO NOT CHANGE THIS - will be used for evaluation
+    public ArrayList<T> return_bfs() {
+        int root = getRootId();
+        Queue<Integer> queue = new LinkedList<>();
+        ArrayList<T> bfs = new ArrayList<>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            int id = queue.remove();
+            if(isLeaf(id)) {
+                T[] keys = ((LeafNode<T>) blocks.get(id)).getKeys();
+                for(int i = 0; i < keys.length; i++) {
+                    bfs.add((T) keys[i]);
+                }
+            }
+            else {
+                T[] keys = ((InternalNode<T>) blocks.get(id)).getKeys();
+                for(int i = 0; i < keys.length; i++) {
+                    bfs.add((T) keys[i]);
+                }
+                int[] children = ((InternalNode<T>) blocks.get(id)).getChildren();
+                for(int i = 0; i < children.length; i++) {
+                    queue.add(children[i]);
+                }
+            }
+        }
+        return bfs;
     }
 
     public void print() {

@@ -83,4 +83,15 @@ public class DB {
         return false;
     }
 
+    public <T> ArrayList<T> return_bfs_index(int file_id){
+        if(file_id >= files.size()){
+            return null;
+        }
+        AbstractFile<? extends AbstractBlock> file = files.get(file_id);
+        if(file instanceof BPlusTreeIndexFile){
+            return ((BPlusTreeIndexFile<T>) file).return_bfs();
+        }
+        return null;
+    }
+
 }

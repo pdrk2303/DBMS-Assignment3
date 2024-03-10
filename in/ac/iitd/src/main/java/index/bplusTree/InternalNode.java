@@ -3,6 +3,8 @@ package index.bplusTree;
 /*
     * Internal Node - num Keys | ptr to next free offset | P_1 | len(K_1) | K_1 | P_2 | len(K_2) | K_2 | ... | P_n
     * Only write code where specified
+
+    * Remember that each Node is a block in the Index file, thus, P_i is the block_id of the child node
  */
 public class InternalNode<T> extends BlockNode implements TreeNode<T> {
 

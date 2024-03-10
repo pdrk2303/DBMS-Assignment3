@@ -203,4 +203,8 @@ public class MyCalciteConnection {
         return storage_manager.get_records_from_block(table, block_id);
     }
 
+    public <T> ArrayList<T> return_bfs_index(String table, String column_name){
+        return storage_manager.return_bfs_index(table, column_name);
+    }
+
 }

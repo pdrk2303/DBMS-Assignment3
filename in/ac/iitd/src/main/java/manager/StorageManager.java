@@ -406,4 +406,14 @@ public class StorageManager {
         return db;
     }
 
+    public <T> ArrayList<T> return_bfs_index(String table_name, String column_name) {
+        if(check_index_exists(table_name, column_name)) {
+            int file_id = file_to_fileid.get(table_name + "_" + column_name + "_index");
+            return db.return_bfs_index(file_id);
+        } else {
+            System.out.println("Index does not exist");
+        }
+        return null;
+    }
+
 }
