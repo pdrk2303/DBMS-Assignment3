@@ -261,6 +261,10 @@ public class StorageManager {
             }
         }
 
+        if(bitmap_idx != 0) {
+            idx++;
+        }
+
         // write variable length fields
         for(int i = 0; i < variable_length_Bytes.size(); i++, idx++) {
             result[idx] = variable_length_Bytes.get(i);
@@ -338,7 +342,8 @@ public class StorageManager {
                 curr_offset = curr_offset - (columnNames.get(i).length() + 2);
                 byte[] offset = new byte[2];
                 offset[0] = (byte) (curr_offset & 0xFF);
-                offset[1] = (byte) ((curr_offset >> 8) & 0xFF);
+                offset[1] = (byte) ((curr_offset >> 8) & 0xFF); 
+                // IMPORTANT: Take care of endianness
                 schema.write_data(2 + 2 * idx, offset);
                 
                 // convert column name to bytes
