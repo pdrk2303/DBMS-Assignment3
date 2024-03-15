@@ -10,6 +10,7 @@ import org.apache.calcite.rel.type.RelDataType;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyCalciteConnectionTest {
@@ -49,13 +50,24 @@ public class MyCalciteConnectionTest {
             List<Object []> result = calciteConnection.evaluate(phyRelNode);
 
             // Uncomment this to check the records returned by IndexScan
+            
+            // assert (result.size() == 101);
 
-            // System.out.println("[+] Final Output : ");
+            // List <Integer> actor_ids = new ArrayList<>();
+
             // for (Object [] row : result) {
-            //     for (Object col : row) {
-            //         System.out.print(col + " ");
-            //     }
-            //     System.out.println();
+            //     assert (row.length == 4);
+            //     assert (row[0] instanceof Integer);
+            //     assert ((Integer)row[0] >= 100);
+            //     actor_ids.add((Integer)row[0]);
+            // }
+
+            // // sort the actor_ids
+            // actor_ids.sort(null);
+
+            // // result actor_ids should be from 100 to 200
+            // for (int i = 0; i < actor_ids.size(); i++) {
+            //     assert (actor_ids.get(i).equals(100 + i));
             // }
 
             calciteConnection.close();

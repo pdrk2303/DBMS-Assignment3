@@ -23,9 +23,9 @@ public class DeserializeTest {
             // assert(result.size() == 78);
 
             // for(int i = 0; i < result.size(); i++){
-            // assert(result.get(i).length == 4);
-            // assert(result.get(i)[0] instanceof Integer);
-            // assert(result.get(i)[0] == expected.get(i));
+            //     assert(result.get(i).length == 4);
+            //     assert(result.get(i)[0] instanceof Integer);
+            //     assert(result.get(i)[0].equals(expected.get(i)));
             // }
 
             calciteConnection.close();
@@ -35,6 +35,7 @@ public class DeserializeTest {
             System.out.println(e.getCause());
             fail("Exception thrown");
         }
+
         System.out.println("Test passed :)");
     }
 }
