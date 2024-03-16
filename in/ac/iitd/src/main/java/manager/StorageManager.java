@@ -395,6 +395,7 @@ public class StorageManager {
         return false;
     }
 
+    // returns the block_id of the leaf node where the key is present
     public int search(String table_name, String column_name, RexLiteral value) {
         /* Write your code here */
         return -1;

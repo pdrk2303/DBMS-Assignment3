@@ -10,6 +10,8 @@ import java.util.LinkedList;
 /*
     * Tree is a collection of BlockNodes
     * The first BlockNode is the metadata block - stores the order and the block_id of the root node
+
+    * The total number of keys in all leaf nodes is the total number of records in the records file.
 */
 
 public class BPlusTreeIndexFile<T> extends AbstractFile<BlockNode> {
@@ -67,13 +69,15 @@ public class BPlusTreeIndexFile<T> extends AbstractFile<BlockNode> {
         return isLeaf(blocks.get(id));
     }
 
-    
+    // will be evaluated
     public void insert(T key, int block_id) {
 
         /* Write your code here */
         return;
     }
 
+    // will be evaluated
+    // returns the block_id of the leftmost leaf node containing the key
     public int search(T key) {
 
         /* Write your code here */

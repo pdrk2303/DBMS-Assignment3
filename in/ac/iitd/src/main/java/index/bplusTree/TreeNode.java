@@ -6,11 +6,7 @@ public interface TreeNode <T> {
     public T[] getKeys();
     public void insert(T key, int block_id);
 
-    public int search(T key); 
-    // returns the block id where the key is present
-    // for InternalNode, it will return the block id of the child node
-    // for LeafNode, it will return the block id of the record
-
+    public int search(T key);
 
     // DO NOT modify this - may be used for evaluation
     default public void print() {
@@ -21,7 +17,7 @@ public interface TreeNode <T> {
         return;
     }
     
-    // Might be useful for you
+    // Might be useful for you - will not be evaluated
     default public T convertBytesToT(byte[] bytes, Class<T> typeClass){
         
         /* Write your code here */

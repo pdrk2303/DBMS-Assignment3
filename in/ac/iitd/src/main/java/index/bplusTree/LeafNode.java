@@ -31,6 +31,7 @@ public class LeafNode<T> extends BlockNode implements TreeNode<T>{
         return;
     }
 
+    // returns the keys in the node - will be evaluated
     @Override
     public T[] getKeys() {
 
@@ -43,6 +44,7 @@ public class LeafNode<T> extends BlockNode implements TreeNode<T>{
 
     }
 
+    // returns the block ids in the node - will be evaluated
     public int[] getBlockIds() {
 
         int numKeys = getNumKeys();
@@ -54,6 +56,7 @@ public class LeafNode<T> extends BlockNode implements TreeNode<T>{
         return block_ids;
     }
 
+    // can be used as helper function - won't be evaluated
     @Override
     public void insert(T key, int block_id) {
 
@@ -64,7 +67,7 @@ public class LeafNode<T> extends BlockNode implements TreeNode<T>{
 
     }
 
-
+    // can be used as helper function - won't be evaluated
     @Override
     public int search(T key) {
 

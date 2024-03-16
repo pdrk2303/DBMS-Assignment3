@@ -40,6 +40,7 @@ public class InternalNode<T> extends BlockNode implements TreeNode<T> {
         return;
     }
 
+    // returns the keys in the node - will be evaluated
     @Override
     public T[] getKeys() {
 
@@ -51,20 +52,21 @@ public class InternalNode<T> extends BlockNode implements TreeNode<T> {
         return keys;
     }
 
+    // can be used as helper function - won't be evaluated
     @Override
     public void insert(T key, int right_block_id) {
-
         /* Write your code here */
 
     }
 
+    // can be used as helper function - won't be evaluated
     @Override
     public int search(T key) {
-
         /* Write your code here */
         return -1;
     }
 
+    // should return the block_ids of the children - will be evaluated
     public int[] getChildren() {
 
         byte[] numKeysBytes = this.get_data(0, 2);

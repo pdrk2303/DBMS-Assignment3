@@ -52,7 +52,7 @@ public class DB {
     }
 
     // only applicable for index tree file
-    // returns the block id where the key is present
+    // returns the block id of leaf node where the key is present
     public <T> int search_index(int file_id, T key){
         if(file_id >= files.size()){
             return -1;
