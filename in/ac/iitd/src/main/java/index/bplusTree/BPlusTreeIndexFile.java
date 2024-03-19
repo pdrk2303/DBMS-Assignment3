@@ -52,13 +52,13 @@ public class BPlusTreeIndexFile<T> extends AbstractFile<BlockNode> {
     private int getRootId() {
         BlockNode node = blocks.get(0);
         byte[] rootBlockIdBytes = node.get_data(2, 2);
-        return ((rootBlockIdBytes[0] << 8) & 0xF0) | (rootBlockIdBytes[1] & 0x0F);
+        return (rootBlockIdBytes[0] << 8) | (rootBlockIdBytes[1] & 0xFF);
     }
 
     public int getOrder() {
         BlockNode node = blocks.get(0);
         byte[] orderBytes = node.get_data(0, 2);
-        return ((orderBytes[0] << 8) & 0xF0) | (orderBytes[1] & 0x0F);
+        return (orderBytes[0] << 8) | (orderBytes[1] & 0xFF);
     }
 
     private boolean isLeaf(BlockNode node){
